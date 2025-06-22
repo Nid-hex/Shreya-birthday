@@ -1,0 +1,190 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+background: linear-gradient(135deg, #ffe0f0, #ffc3a0);
+font-family: 'Comic Sans MS', cursive;
+color: #4a004a;
+text-align: center;
+padding: 30px;
+background-image: url('https://www.transparenttextures.com/patterns/floral-white.png');
+}
+
+.container {
+animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+font-size: 3rem;
+color: #ff1493;
+animation: bounce 2s infinite;
+margin-bottom: 10px;
+}
+
+.message {
+font-size: 1.3rem;
+margin: 20px auto;
+max-width: 700px;
+background: rgba(255, 255, 255, 0.6);
+border: 2px dashed #ff69b4;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(255, 0, 144, 0.2);
+}
+
+.gallery {
+margin-top: 40px;
+}
+
+.gallery h2 {
+font-size: 2rem;
+color: #c71585;
+margin-bottom: 20px;
+}
+
+.images {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 15px;
+}
+
+.images img {
+width: 200px;
+height: 150px;
+border-radius: 15px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+border: 3px solid #ffb6c1;
+transition: transform 0.3s ease;
+}
+
+.images img:hover {
+transform: scale(1.1) rotate(-2deg);
+}
+.images img {
+width: 200px;
+height: 150px;
+object-fit: cover; /* Keeps original aspect ratio, fills box */
+border-radius: 15px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+border: 3px solid #ffb6c1;
+transition: transform 0.3s ease;
+}
+@media (max-width: 600px) {
+.images img {
+width: 100%;
+height: auto;
+}
+}
+
+.play-btn {
+margin-bottom: 20px;
+padding: 10px 20px;
+background-color: #ff69b4;
+color: white;
+font-size: 1.2rem;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+background-color: #ff1493;
+}
+
+/* 🎁 Gift Box Styles */
+.gift-section {
+margin-top: 60px;
+}
+
+.gift-btn {
+padding: 12px 25px;
+font-size: 1.3rem;
+background-color: #ff69b4;
+color: white;
+border: none;
+border-radius: 30px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.gift-btn:hover {
+background-color: #ff1493;
+}
+
+.gift-box {
+position: relative;
+width: 150px;
+height: 150px;
+margin: 30px auto;
+transform-style: preserve-3d;
+}
+
+.gift-box .lid {
+position: absolute;
+width: 150px;
+height: 20px;
+background: #ff69b4;
+top: 0;
+border-radius: 10px 10px 0 0;
+z-index: 2;
+transition: all 0.5s ease;
+}
+
+.gift-box .box {
+width: 150px;
+height: 130px;
+background: #ffb6c1;
+position: absolute;
+top: 20px;
+border-radius: 0 0 10px 10px;
+z-index: 1;
+}
+
+.flower {
+width: 80px;
+position: absolute;
+top: -70px;
+left: 35px;
+z-index: 3;
+display: none;
+animation: popUp 1s ease-in-out forwards;
+}
+
+.gift-box.open .lid {
+transform: rotateX(120deg);
+}
+
+.gift-box.open .flower {
+display: block;
+}
+
+@keyframes popUp {
+0% {
+transform: translateY(50px) scale(0.5);
+opacity: 0;
+}
+100% {
+transform: translateY(0) scale(1);
+opacity: 1;
+}
+}
+
+@keyframes bounce {
+0%, 100% {
+transform: translateY(-10px);
+}
+50% {
+transform: translateY(10px);
+}
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
